@@ -8,10 +8,6 @@
         fill-opacity: 80%;
         stroke-opacity: 80%;
     }
-
-    img svg  {
-        fill: red;
-    }
 }
 
 .clear,
@@ -61,6 +57,19 @@
     background: (var(--secondary-color));
     border: none;
 }
+
+.error {
+    background: #FF4445;
+}
+
+.warning {
+    background: #FF9533;
+}
+
+.notification {
+    background: #339DFF;
+}
+
 .square {
     padding: 0;
 }

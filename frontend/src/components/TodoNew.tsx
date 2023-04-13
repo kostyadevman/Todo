@@ -1,7 +1,6 @@
 import { observer } from 'mobx-react-lite';
 import { store } from "../store";
 import { useState } from 'react';
-import {default as UUID} from "node-uuid";
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 
 

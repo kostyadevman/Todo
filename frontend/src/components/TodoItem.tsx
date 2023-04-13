@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { store } from "../store";
 import { ButtonTheme, ButtonSize, Button } from '@/shared/ui/Button';
 import DeleteIcon from '@/shared/assets/icons/delete.svg'
+import EditIcon from '@/shared/assets/icons/edit.svg'
+import DoneIcon from '@/shared/assets/icons/done.svg'
 
 
 interface TodoItemProps {
@@ -39,31 +41,45 @@ function TodoItem({ todo, deleteTodoItem, updateTodoItem }: TodoItemProps): JSX.
             className="task__input"
         />
         {!editable  && 
-            <button 
-                className="btn-reset btn btn-edit"
+            <Button
+                theme={ButtonTheme.CLEAR}
+                size={ButtonSize.M}
                 onClick={editClickHandler}
-                >
-                    Edit
-                </button>}
+            >
+                <Image
+                    src={EditIcon}
+                    height={24}
+                    width={24}
+                    alt="Edit item"
+                />
+            </Button>
+        }
         {editable && 
-            <button 
-                className="btn-reset btn btn-save"
+            <Button
+                theme={ButtonTheme.CLEAR}
+                size={ButtonSize.M}
                 onClick={() => saveClickHandler(todo)}
             >
-                Save
-            </button>}
-                <Button
-                    theme={ButtonTheme.CLEAR}
-                    size={ButtonSize.M}
-                    onClick={() => deleteTodoItem(todo)}
-                >
-                    <Image
-                        src={DeleteIcon}
-                        height={24}
-                        width={24}
-                        alt="Delete item"
-                    />
-                </Button>
+                <Image
+                    src={DoneIcon}
+                    height={24}
+                    width={24}
+                    alt="Save item"
+            />
+        </Button>
+        }
+            <Button
+                theme={ButtonTheme.CLEAR}
+                size={ButtonSize.M}
+                onClick={() => deleteTodoItem(todo)}
+            >
+                <Image
+                    src={DeleteIcon}
+                    height={24}
+                    width={24}
+                    alt="Delete item"
+                />
+            </Button>
     </li>
    );
 }
