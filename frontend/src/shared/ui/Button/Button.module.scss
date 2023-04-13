@@ -8,6 +8,10 @@
         fill-opacity: 80%;
         stroke-opacity: 80%;
     }
+
+    img svg  {
+        fill: red;
+    }
 }
 
 .clear,
@@ -46,6 +50,17 @@
     border: none;
 }
 
+.primary {
+    color: (var(--inverted-bg-color));
+    background: (var(--primary-color));
+    border: none;
+}
+
+.secondary {
+    color: (var(--inverted-bg-color));
+    background: (var(--secondary-color));
+    border: none;
+}
 .square {
     padding: 0;
 }

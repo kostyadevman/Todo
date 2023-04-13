@@ -10,6 +10,8 @@ export enum ButtonTheme {
     OUTLINE = 'outline',
     OUTLINE_RED = 'outline_red',
     BACKGROUND = 'background',
+    PRIMARY = 'primary',
+    SECONDARY = 'secondary',
     BACKGROUND_INVERTED = 'backgroundInverted'
 }
 
@@ -45,7 +47,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
      * Увеличивает кнопку на всю свободную ширину
      */
     fullWidth?: boolean;
-    backgroundColor?: string;
 }
 
 export const Button = (props: ButtonProps) => {
@@ -57,7 +58,6 @@ export const Button = (props: ButtonProps) => {
         size = ButtonSize.M,
         disabled,
         fullWidth,
-        backgroundColor,
         ...OtherProps
     } = props;
 
@@ -77,11 +77,6 @@ export const Button = (props: ButtonProps) => {
             {...OtherProps}
         >
             {children}
-            <style jsx>{`
-                button {
-                background-color: ${backgroundColor};
-                }
-            `}</style>
         </button>
     );
 };

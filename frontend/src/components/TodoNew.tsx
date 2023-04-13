@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite';
 import { store } from "../store";
 import { useState } from 'react';
 import {default as UUID} from "node-uuid";
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 
 
 function TodoNew(): JSX.Element {
@@ -10,8 +11,6 @@ function TodoNew(): JSX.Element {
 
 
     const addClickHandler = () => {
-        const id = UUID.v4();
-        console.log(id)
         store.addTodoAsync(title)
         setTitle('');
     }
@@ -29,7 +28,14 @@ function TodoNew(): JSX.Element {
                         onChange={(e) => setTitle(e.target.value)}
                     />
                 </label>
-                <button className="btn-reset btn" onClick={addClickHandler}>Add todo</button>
+                <Button
+                    theme={ButtonTheme.SECONDARY}
+                    size={ButtonSize.M}
+                    fullWidth
+                    onClick={addClickHandler}
+                >
+                    Add todo
+                </Button>
             </div>
 
     );

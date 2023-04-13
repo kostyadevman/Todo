@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Todo } from "../types";
 import { observer } from 'mobx-react-lite';
+import Image from 'next/image';
 import { store } from "../store";
+import { ButtonTheme, ButtonSize, Button } from '@/shared/ui/Button';
+import DeleteIcon from '@/shared/assets/icons/delete.svg'
+
 
 interface TodoItemProps {
     todo: Todo;
@@ -48,12 +52,18 @@ function TodoItem({ todo, deleteTodoItem, updateTodoItem }: TodoItemProps): JSX.
             >
                 Save
             </button>}
-        <button 
-            className="btn-reset btn btn-delete" 
-            onClick={() => deleteTodoItem(todo)}
-        >
-            Del
-        </button>
+                <Button
+                    theme={ButtonTheme.CLEAR}
+                    size={ButtonSize.M}
+                    onClick={() => deleteTodoItem(todo)}
+                >
+                    <Image
+                        src={DeleteIcon}
+                        height={24}
+                        width={24}
+                        alt="Delete item"
+                    />
+                </Button>
     </li>
    );
 }
