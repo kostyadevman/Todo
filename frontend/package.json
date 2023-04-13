@@ -36,6 +36,7 @@
     "@storybook/nextjs": "^7.0.2",
     "@storybook/react": "^7.0.2",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@svgr/webpack": "^7.0.0",
     "@types/node-uuid": "^0.0.29",
     "concurrently": "^8.0.1",
     "storybook": "^7.0.2"

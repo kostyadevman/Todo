@@ -16,6 +16,10 @@
     background: none;
     border: none;
     outline: none;
+
+    svg path {
+        fill: var(--primary-color)
+    }
 }
 
 .clearInverted {

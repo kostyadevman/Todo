@@ -46,12 +46,7 @@ function TodoItem({ todo, deleteTodoItem, updateTodoItem }: TodoItemProps): JSX.
                 size={ButtonSize.M}
                 onClick={editClickHandler}
             >
-                <Image
-                    src={EditIcon}
-                    height={24}
-                    width={24}
-                    alt="Edit item"
-                />
+                <EditIcon />
             </Button>
         }
         {editable && 
@@ -60,25 +55,15 @@ function TodoItem({ todo, deleteTodoItem, updateTodoItem }: TodoItemProps): JSX.
                 size={ButtonSize.M}
                 onClick={() => saveClickHandler(todo)}
             >
-                <Image
-                    src={DoneIcon}
-                    height={24}
-                    width={24}
-                    alt="Save item"
-            />
-        </Button>
+                <DoneIcon />
+            </Button>
         }
             <Button
                 theme={ButtonTheme.CLEAR}
                 size={ButtonSize.M}
                 onClick={() => deleteTodoItem(todo)}
             >
-                <Image
-                    src={DeleteIcon}
-                    height={24}
-                    width={24}
-                    alt="Delete item"
-                />
+                <DeleteIcon />
             </Button>
     </li>
    );

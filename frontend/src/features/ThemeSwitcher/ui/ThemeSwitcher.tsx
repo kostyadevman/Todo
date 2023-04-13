@@ -3,6 +3,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
 import { Theme } from '@/shared/const/theme';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import Image from 'next/image';
+import ThemeLightIcon from '@/shared/assets/icons/them-light.svg'
+import ThemeDarkIcon from '@/shared/assets/icons/theme-dark.svg'
 
 interface ThemeSwitcherProps {
     className?: string;
@@ -25,7 +28,11 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps)  => {
             className={classNames('', {}, [className])}
             onClick={toggleTheme}
         >
-            {theme === Theme.DARK ? <span>DARK MODE ON</span> : <span>LIGHT MODE ON</span>}
+            {
+                theme === Theme.DARK ? 
+                <ThemeLightIcon /> : 
+                <ThemeDarkIcon />
+            }
         </Button>
     );
 });
